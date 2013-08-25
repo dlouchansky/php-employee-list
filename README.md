@@ -4,4 +4,4 @@ Requirements were: don't use any frameworks (only pure PHP, CSS, JavaScript, HTM
 
 The task took me 5 hours and one more hour for refactoring. No JavaScript written, because it would take me another 2 hours.
 
-I've made simple MVC with front controller pattern, nuff said.
+I've made simple MVC with front controller pattern, nuff said. Oh, and UI is in Яussian.

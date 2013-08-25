@@ -1,4 +1,5 @@
 <?
+
 require_once('config.php');
 require_once('model/db.php');
 
@@ -47,7 +48,8 @@ class Router {
 			} else if (
 				$params[1] == 'list' && isset($params[2]) &&
 				isset($params[3]) && ($field = $params[2]) &&
-				in_array($direction = $params[3], array('asc', 'desc'))
+				in_array($direction = $params[3], array('asc', 'desc')) &&
+				$controller instanceof Employee
 			) {
 				$controller->GetList($field, $direction);
 			} else {

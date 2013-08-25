@@ -1,6 +1,6 @@
 <?php
 require_once('controller.php');
-require_once('../model/positions.php');
+require_once('./model/positions.php');
 
 class Position extends Controller {
 

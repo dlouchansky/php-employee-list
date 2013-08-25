@@ -1,6 +1,6 @@
 <?
 require_once('controller.php');
-require_once('../model/employees.php');
+require_once('./model/employees.php');
 
 class Employee extends Controller {
 

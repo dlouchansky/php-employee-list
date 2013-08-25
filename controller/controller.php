@@ -5,12 +5,12 @@ class Controller {
 	public $data;
 
 	public function Show($content = '') {
-		include_once('../view/header.html.php');
+		include_once('./view/header.html.php');
 
 		if (strlen($content))
-			include_once('../view/'.$content.'.html.php');
+			include_once('./view/'.$content.'.html.php');
 
-		include_once('../view/footer.html.php');
+		include_once('./view/footer.html.php');
 	}
 
 	public function GetPostFields($model_fields) {
