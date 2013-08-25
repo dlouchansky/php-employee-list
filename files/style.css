@@ -1,0 +1,54 @@
+div.content {
+	margin: 40px 40px 40px 40px;
+}
+
+ul {
+	margin: 40px 40px 0px 40px;
+}
+
+table {
+	border-collapse: collapse;
+	margin-top: 20px;
+}
+
+table tr td {
+	border: 1px solid lightgrey;
+	padding: 5px;
+}
+
+table thead {
+	font-weight: bold;
+}
+
+ul li {
+	list-style: none;
+	display: inline-block;
+}
+
+td.long {
+	width: 250px;
+}
+
+td.medium {
+	width: 150px;
+}
+
+.label {
+	width: 100px;
+	display: block;
+	font-size: 18px;
+	margin: 10px 0px 10px 0px;
+}
+
+input, textarea, select {
+	width: 400px;
+	font-size: 20px;
+}
+
+input {
+	height: 30px;
+}
+
+.error {
+	color: red;
+}
