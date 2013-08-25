@@ -8,7 +8,7 @@
 		<td>Удалить</td>
 	</tr>
 	</thead>
-	<? if (count(self::$data['positions'])) foreach (self::$data['positions'] as $position) { ?>
+	<? if (count($this->data['positions'])) foreach ($this->data['positions'] as $position) { ?>
 		<tr>
 			<td><?= htmlspecialchars($position['name']) ?></td>
 			<td><?= htmlspecialchars($position['description']) ?></td>

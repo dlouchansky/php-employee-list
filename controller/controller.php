@@ -2,18 +2,18 @@
 
 class Controller {
 
-	public static $data;
+	public $data;
 
-	public static function Show($content = '') {
-		include_once('view/header.html.php');
+	public function Show($content = '') {
+		include_once('../view/header.html.php');
 
 		if (strlen($content))
-			include_once('view/'.$content.'.html.php');
+			include_once('../view/'.$content.'.html.php');
 
-		include_once('view/footer.html.php');
+		include_once('../view/footer.html.php');
 	}
 
-	public static function GetPostFields($model_fields) {
+	public function GetPostFields($model_fields) {
 		$data = array();
 
 		foreach($model_fields as $field => $type) {

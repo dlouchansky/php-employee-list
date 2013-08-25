@@ -22,7 +22,7 @@
 			<td>Удалить</td>
 		</tr>
 	</thead>
-	<? if (count(self::$data['employees'])) foreach (self::$data['employees'] as $employee) { ?>
+	<? if (count($this->data['employees'])) foreach ($this->data['employees'] as $employee) { ?>
 	<tr>
 		<td><?= htmlspecialchars($employee['first_name']) ?></td>
 		<td><?= htmlspecialchars($employee['last_name']) ?></td>
