@@ -1,6 +1,7 @@
 <?php
 
-class Employees {
+include_once("modelinterface.php");
+class Employees implements ModelInterface {
 	public static $fields = array(
 		'first_name' => 'string',
 		'last_name' => 'string',

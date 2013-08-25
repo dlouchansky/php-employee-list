@@ -7,7 +7,7 @@ class Config {
 			'host' => 'localhost',
 			'user' =>  'employee_list',
 			'pass' => 'password',
-			'database' => 'eployee_list',
+			'database' => 'employee_list',
 			'port' => 3306
 		);
 	}

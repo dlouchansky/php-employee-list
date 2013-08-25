@@ -1,6 +1,7 @@
 <?php
 
-class Positions {
+include_once("modelinterface.php");
+class Positions implements ModelInterface {
 	public static $fields = array(
 		'name' => 'string',
 		'description' => 'string',
