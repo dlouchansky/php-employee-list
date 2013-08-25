@@ -35,4 +35,27 @@ class Employees {
 	public static function Delete($id) {
 		DB::GetInstance()->Delete('employees', $id);
 	}
+
+	public static function Validate($data) {
+		$errors = array();
+
+		if (!isset($data['first_name']) || !strlen($data['first_name'])) {
+			$errors[] = 'Имя обязательно';
+		}
+
+		if (!isset($data['last_name']) || !strlen($data['last_name'])) {
+			$errors[] = 'Фамилия обязательна';
+		}
+
+		if (!isset($data['position']) || !$data['position']) {
+			$errors[] = 'Должность обязательна';
+		}
+
+		if (isset($data['salary']) && !(int)$data['salary']) {
+			$errors[] = 'Оклад должен быть положительным целым числом';
+		}
+
+		return $errors;
+	}
+
 }

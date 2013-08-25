@@ -11,14 +11,12 @@ class Position extends Controller {
 
 	public function Edit($id) {
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-			$this->data['errors'] = array();
 
-			if (!isset($_POST['name']) || !strlen($_POST['name'])) {
-				$this->data['errors'][] = 'Название обязательно';
-			}
+			$fields = $this->GetPostFields(Positions::$fields);
+			$this->data['errors'] = Positions::Validate($fields);
 
 			if (!count($this->data['errors'])) {
-				Positions::Edit($id, $this->GetPostFields(Positions::$fields));
+				Positions::Edit($id, $fields);
 				header('Location: '.Config::$root.'/index.php/position');
 				return false;
 			} else {
@@ -33,14 +31,12 @@ class Position extends Controller {
 
 	public function Add() {
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-			$this->data['errors'] = array();
 
-			if (!isset($_POST['name']) || !strlen($_POST['name'])) {
-				$this->data['errors'][] = 'Название обязательно';
-			}
+			$fields = $this->GetPostFields(Positions::$fields);
+			$this->data['errors'] = Positions::Validate($fields);
 
 			if (!count($this->data['errors'])) {
-				Positions::Add($this->GetPostFields(Positions::$fields));
+				Positions::Add($fields);
 				header('Location: '.Config::$root.'/index.php/position');
 				return false;
 			} else {

@@ -19,26 +19,11 @@ class Employee extends Controller {
 
 	public function Edit($id) {
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-			$this->data['errors'] = array();
-
-			if (!isset($_POST['first_name']) || !strlen($_POST['first_name'])) {
-				$this->data['errors'][] = 'Имя обязательно';
-			}
-
-			if (!isset($_POST['last_name']) || !strlen($_POST['last_name'])) {
-				$this->data['errors'][] = 'Фамилия обязательна';
-			}
-
-			if (!isset($_POST['position']) || !$_POST['position']) {
-				$this->data['errors'][] = 'Должность обязательна';
-			}
-
-			if (isset($_POST['salary']) && !(int)$_POST['salary']) {
-				$this->data['errors'][] = 'Оклад должен быть положительным целым числом';
-			}
+			$fields = $this->GetPostFields(Employees::$fields);
+			$this->data['errors'] = Employees::Validate($fields);
 
 			if (!count($this->data['errors'])) {
-				Employees::Edit($id, $this->GetPostFields(Employees::$fields));
+				Employees::Edit($id, $fields);
 				header('Location: '.Config::$root.'/index.php/employee');
 				return false;
 			} else {
@@ -56,26 +41,12 @@ class Employee extends Controller {
 	public function Add() {
 
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-			$this->data['errors'] = array();
 
-			if (!isset($_POST['first_name']) || !strlen($_POST['first_name'])) {
-				$this->data['errors'][] = 'Имя обязательно';
-			}
-
-			if (!isset($_POST['last_name']) || !strlen($_POST['last_name'])) {
-				$this->data['errors'][] = 'Фамилия обязательна';
-			}
-
-			if (!isset($_POST['position']) || !$_POST['position']) {
-				$this->data['errors'][] = 'Должность обязательна';
-			}
-
-			if (isset($_POST['salary']) && !(int)$_POST['salary']) {
-				$this->data['errors'][] = 'Оклад должен быть положительным целым числом';
-			}
+			$fields = $this->GetPostFields(Employees::$fields);
+			$this->data['errors'] = Employees::Validate($fields);
 
 			if (!count($this->data['errors'])) {
-				Employees::Add($this->GetPostFields(Employees::$fields));
+				Employees::Add($fields);
 				header('Location: '.Config::$root.'/index.php/employee');
 				return false;
 			} else {

@@ -28,4 +28,14 @@ class Positions {
 		DB::GetInstance()->Delete('positions', $id);
 	}
 
+	public static function Validate($data) {
+		$errors = array();
+
+		if (!isset($data['name']) || !strlen($data['name'])) {
+			$errors[] = 'Название обязательно';
+		}
+
+		return $errors;
+	}
+
 }
