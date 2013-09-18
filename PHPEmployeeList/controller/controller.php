@@ -1,10 +1,14 @@
 <?php
 
-class Controller {
+namespace PHPEmployeeList\Controller;
 
-	public $data;
+class Controller
+{
 
-	public function Show($content = '') {
+	protected $data;
+
+	public function show($content = '')
+	{
 		include_once('./view/header.html.php');
 
 		if (strlen($content))
@@ -13,7 +17,8 @@ class Controller {
 		include_once('./view/footer.html.php');
 	}
 
-	public function GetPostFields($model_fields) {
+	public function getPostFields($model_fields)
+	{
 		$data = array();
 
 		foreach($model_fields as $field => $type) {

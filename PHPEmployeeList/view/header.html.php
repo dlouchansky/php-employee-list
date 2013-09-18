@@ -1,3 +1,11 @@
+<?
+
+namespace PHPEmployeeList\View;
+
+use PHPEmployeeList\Config;
+
+?>
+
 <html>
 
 	<head>

@@ -1,7 +1,10 @@
 <?php
 
-include_once("modelinterface.php");
-class Employees implements ModelInterface {
+namespace PHPEmployeeList\Model;
+
+class Employees implements ModelInterface
+{
+
 	public static $fields = array(
 		'first_name' => 'string',
 		'last_name' => 'string',
@@ -12,8 +15,9 @@ class Employees implements ModelInterface {
 
 	public static $table = "employees";
 
-	public static function GetList($field = "name", $direction = "asc") {
-		return DB::GetInstance()->GetList('employees', array(
+	public static function getList($field = "name", $direction = "asc")
+	{
+		return DB::getInstance()->getList(self::$table, array(
 			'order' => $field.' '.$direction,
 			'join' => 'positions',
 			'on' => 'positions.id = employees.position',
@@ -21,23 +25,28 @@ class Employees implements ModelInterface {
 		));
 	}
 
-	public static function Edit($id, $data) {
-		DB::GetInstance()->Edit('employees', $id, $data);
+	public static function edit($id, $data)
+	{
+		DB::getInstance()->edit(self::$table, $id, $data);
 	}
 
-	public static function Get($id) {
-		return DB::GetInstance()->Get('employees', $id);
+	public static function get($id)
+	{
+		return DB::getInstance()->get(self::$table, $id);
 	}
 
-	public static function Add($data) {
-		DB::GetInstance()->Add('employees', $data);
+	public static function add($data)
+	{
+		DB::getInstance()->add(self::$table, $data);
 	}
 
-	public static function Delete($id) {
-		DB::GetInstance()->Delete('employees', $id);
+	public static function delete($id)
+	{
+		DB::getInstance()->delete(self::$table, $id);
 	}
 
-	public static function Validate($data) {
+	public static function validate($data)
+	{
 		$errors = array();
 
 		if (!isset($data['first_name']) || !strlen($data['first_name'])) {

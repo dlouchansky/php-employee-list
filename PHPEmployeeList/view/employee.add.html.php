@@ -1,3 +1,10 @@
+<?
+
+namespace PHPEmployeeList\View;
+
+use PHPEmployeeList\Config;
+
+?>
 <form method="POST">
 	<h3>Добавление работника</h3>
 	<label>

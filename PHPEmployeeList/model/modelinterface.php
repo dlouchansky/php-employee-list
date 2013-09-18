@@ -1,6 +1,10 @@
 <?
 
-interface ModelInterface {
+namespace PHPEmployeeList\Model;
+
+interface ModelInterface
+{
+
 	public static function Edit($id, $data);
 
 	public static function Get($id);
@@ -12,4 +16,5 @@ interface ModelInterface {
 	public static function GetList();
 
 	public static function Validate($data);
+
 }

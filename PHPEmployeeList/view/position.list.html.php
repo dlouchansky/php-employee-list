@@ -1,3 +1,10 @@
+<?
+
+namespace PHPEmployeeList\View;
+
+use PHPEmployeeList\Config;
+
+?>
 <a href="<?= Config::$root ?>/index.php/position/add">Добавить новую</a>
 <table>
 	<thead>

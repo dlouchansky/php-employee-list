@@ -1,5 +1,7 @@
 <?
 
+namespace PHPEmployeeList;
+
 class Config {
 
 	public static function DB() {
@@ -12,5 +14,5 @@ class Config {
 		);
 	}
 
-	public static $root = '/php_employee_list';
+	public static $root = '/phpemployeelist';
 }
