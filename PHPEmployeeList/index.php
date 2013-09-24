@@ -4,6 +4,7 @@ namespace PHPEmployeeList;
 
 function employee_list_autoload($className)
 {
+
 	$className = ltrim($className, '\\');
 	$fileName  = '';
 	if ($lastNsPos = strrpos($className, '\\')) {
@@ -13,14 +14,13 @@ function employee_list_autoload($className)
 	}
 	$fileName .= str_replace('_', DIRECTORY_SEPARATOR, $className) . '.php';
 	require '../'.$fileName;
+
 }
 
 spl_autoload_register('PHPEmployeeList\employee_list_autoload');
 
-$router = new Router();
-$router->prepareUri($_SERVER["REQUEST_URI"]);
+$router = new Router($_SERVER["REQUEST_URI"], $_SERVER["REQUEST_METHOD"]);
 $router->navigate();
 
-// TODO create Template class to load view files through it
-// TODO rename current models to some "Services" and retrieve data from BD not as arrays but as objects
-// TODO DI using Composer to remove all these static methods in models
+// todo make normal routing system
+// todo model interface in view constructors, not models themselves

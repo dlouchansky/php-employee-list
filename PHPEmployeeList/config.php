@@ -2,10 +2,13 @@
 
 namespace PHPEmployeeList;
 
-class Config {
+class Config
+{
 
-	public static function DB() {
+	public static function PDO()
+	{
 		return array(
+			'dbtype' => 'mysql',
 			'host' => 'localhost',
 			'user' =>  'employee_list',
 			'pass' => 'password',
@@ -14,5 +17,9 @@ class Config {
 		);
 	}
 
-	public static $root = '/phpemployeelist';
+	public static $root = '/phpemployeelist/';
+	public static $index = 'index.php/';
+
+	public static function base() { return self::$root.self::$index; }
+
 }
