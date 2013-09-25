@@ -29,7 +29,7 @@ use PHPEmployeeList\Config;
 			<td>Удалить</td>
 		</tr>
 	</thead>
-	<? if (count($this->model->getEmployees())) foreach ($this->model->getEmployees() as $employee) { ?>
+	<? if (count($this->employees)) foreach ($this->employees as $employee) { ?>
 	<tr>
 		<td><?= htmlspecialchars($employee->first_name) ?></td>
 		<td><?= htmlspecialchars($employee->last_name) ?></td>

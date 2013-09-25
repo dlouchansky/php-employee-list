@@ -21,6 +21,3 @@ spl_autoload_register('PHPEmployeeList\employee_list_autoload');
 
 $router = new Router($_SERVER["REQUEST_URI"], $_SERVER["REQUEST_METHOD"]);
 $router->navigate();
-
-// todo make normal routing system
-// todo model interface in view constructors, not models themselves

@@ -15,7 +15,7 @@ use PHPEmployeeList\Config;
 		<td>Удалить</td>
 	</tr>
 	</thead>
-	<? if (count($this->model->getPositions())) foreach ($this->model->getPositions() as $position) { ?>
+	<? if (count($this->positions)) foreach ($this->positions as $position) { ?>
 		<tr>
 			<td><?= htmlspecialchars($position->name) ?></td>
 			<td><?= htmlspecialchars($position->description) ?></td>

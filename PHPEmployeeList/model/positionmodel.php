@@ -6,7 +6,8 @@ namespace PHPEmployeeList\Model;
 use PHPEmployeeList\Model\Domain\Position;
 use PHPEmployeeList\Model\Persistence\PositionDAO;
 
-class PositionModel {
+class PositionModel implements SinglePositionModel, PositionListModel
+{
 
 	private $position_dao;
 	private $position;

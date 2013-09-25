@@ -3,7 +3,7 @@
 namespace PHPEmployeeList\View\Employee;
 
 
-use PHPEmployeeList\Model\EmployeeModel;
+use PHPEmployeeList\Model\EmployeeListModel;
 use PHPEmployeeList\View\BaseView;
 
 class EmployeeListView extends BaseView
@@ -11,9 +11,12 @@ class EmployeeListView extends BaseView
 
 	private $model;
 
-	public function __construct(EmployeeModel $employee_model)
+	private $employees;
+
+	public function __construct(EmployeeListModel $employee_model)
 	{
 		$this->model = $employee_model;
+		$this->employees = $this->model->getEmployees();
 	}
 
 	public function showHtml($uri_params)

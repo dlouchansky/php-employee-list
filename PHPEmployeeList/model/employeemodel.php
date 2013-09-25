@@ -7,7 +7,8 @@ use PHPEmployeeList\Model\Domain\Employee;
 use PHPEmployeeList\Model\Persistence\EmployeeDAO;
 use PHPEmployeeList\Model\Persistence\PositionDAO;
 
-class EmployeeModel {
+class EmployeeModel implements EmployeeListModel, SingleEmployeeModel
+{
 
 	private $employee_dao;
 	private $position_dao;
