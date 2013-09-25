@@ -24,6 +24,13 @@ class PDOEmployeeDAO implements EmployeeDAO
 		if (strlen($field) && array_key_exists($field, $this->field_map)) {
 			if ($field == 'position')
 				$field = 'pos_name';
+
+		} else {
+			$field = "id";
+		}
+
+		if (!strlen($direction) || !in_array($direction, ['asc', 'desc'])) {
+			$direction = "asc";
 		}
 
 		$data = PDODB::getInstance()->getAll($this->table, $field, $direction, array(
